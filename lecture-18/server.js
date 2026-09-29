@@ -35,11 +35,12 @@ app.use((req,res)=>{    //Invalid route middleware
     })
 })
 
-app.use((err,req,res,next)){.   //Error Handling Middleware
+app.use((err,req,res,next)=>{   //Error Handling Middleware
+    console.log(err);
     res.status(404).send({
         sucess:false,
         message:"Page not found"
     })
-}
+})
 
 app.listen(3000,()=>console.log("Server is running"))
